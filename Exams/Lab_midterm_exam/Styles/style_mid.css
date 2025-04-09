@@ -1,0 +1,265 @@
+.logo{
+    width: 125px;
+}
+
+.na_icon{
+    width: 21px;
+}
+
+.na_icon:hover{
+    width: 22px;
+}
+
+.btn{
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.dropdown-menu{
+    border: none;
+}
+
+.navbar{
+    padding-left: 45px;
+    padding-right: 45px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgb(228, 228, 228);
+}
+
+.nav-link{
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.mm_btn{
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.Mega-Menu {
+    padding: 0 150px; 
+    transition: max-height 0.5s ease, opacity 0.5s ease;    
+
+}
+
+.m_title{
+    font-size: 25px;
+}
+
+.m_desc{
+    display: inline;
+}
+
+.link_m{
+    font-size: 15px;
+}
+
+.hero{
+    height: 780px;
+    align-content: center;
+    background-image: url("Hero2.png");
+    background-size: cover;
+    cursor: pointer;
+    background-position: center;
+}
+
+.herocontent{
+    text-align: center;
+}
+
+.hero-btn{
+    background-color: white;
+    padding: 9px 67px 9px 67px;
+    border: none;
+    border-radius: 2px;
+}
+
+.hero-heading{
+    color: white;
+    font-size: 60px;
+    font-family: "PT Serif";
+    margin-bottom: 15px;
+}
+
+
+.products{
+    padding: 15px;
+    display: flex;
+    
+}
+
+.products2{
+    padding: 15px;
+    display: flex;
+
+}
+
+.product_card{
+    padding: 0px;
+    cursor: pointer;
+
+}
+
+.product_image{
+    width: 310px;
+    transition: opacity 4.8s ease-in-out;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 35%;
+    background-color: rgb(220, 219, 219); 
+    border-radius: 50px;  
+    width: 40px;  
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1; 
+    margin: 10px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(215, 215, 215);
+}
+
+.carousel-control-prev{
+    content: url(prev.png);
+}
+
+.carousel-control-next{
+    content: url(next.png);
+}
+
+.sale{
+    font-size: 13px;
+    text-decoration: line-through;
+    color: gray;
+}
+
+.hero2{
+    height: 500px;
+    background-image: url(section3.webp);
+    background-size: cover;
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-position: right;
+}
+
+.footer {
+    background-color: rgb(243 243 243);
+    padding-bottom: 50px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgb(200, 200, 200);
+}
+
+.customer_care {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.f_a{
+    color: rgb(110, 110, 110);
+    font-size: 15px;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.f_a:hover{
+    text-decoration: underline;
+}
+
+h6{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 25px;
+}
+.email{
+    width: 350px;
+    height: 50px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.About_s{
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Socials {
+    text-align: center;
+    align-content: end;
+}
+
+.social {
+   
+    border: none;
+    background-color: rgba(245, 245, 220, 0);
+}
+
+.si{
+    width: 28px;
+    cursor: pointer;
+}
+
+.si:hover{
+    width: 29px;
+}
+.eml{
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .bf {
+        text-align: center;  
+        justify-content: center;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+.Region{
+    padding-left: 40px;
+    background-color: rgb(243 243 243);
+    
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.R_p{
+    font-size: 14px;
+    color: rgb(134, 134, 134);
+}
+
+.cntry_btn{
+    
+    padding: 15px 25px 15px 25px;
+    border: solid;
+    border-width: 1px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.cntry_btn:hover{
+    border-width: 1.5px;
+}
+
+@media (max-width: 768px) {
+    .Region {
+        text-align: center;  
+        justify-content: center;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
