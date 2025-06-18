@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/Styles/index.css">
+  <link rel="stylesheet" href="/Styles/admin.css">
+</head>
+<body>
+  
+
+<div style="display: flex; min-height: 100vh;">
+  <div class="sidebar" >
+    <ul style="list-style: none; padding: 0;">
+
+  <a href="/"><img class="adm-logo-img" src="/Media/Icons/adm_logo.png" alt=""></a>
+  <div id="adm_n">
+    <li class="adm-li <%= activePage === 'dashboard' ? 'active' : '' %>">
+      <a class="adm-nav" href="/admin/dashboard"> <img class="dsh_icons" src="<%= activePage === 'dashboard' ? '/Media/Icons/Dashboard/dashboard_green.png' : '/Media/Icons/Dashboard/dashoard_white.png' %>" alt=""> Dashboard</a>
+    </li>
+    <li class="adm-li <%= activePage === 'products' ? 'active' : '' %>">
+      <a class="adm-nav" href="/admin/dashboard/products">    <img class="dsh_icons" src="<%= activePage === 'products' ? '/Media/Icons/Dashboard/products_green.png' : '/Media/Icons/Dashboard/products_white.png' %>" alt=""> Products</a>
+    </li>
+    <li class="adm-li <%= activePage === 'category' ? 'active' : '' %>">
+      <a class="adm-nav" href="/admin/dashboard/category">   <img class="dsh_icons" src="<%= activePage === 'category' ? '/Media/Icons/Dashboard/category green.png' : '/Media/Icons/Dashboard/Category_white.png' %>" alt=""> Category</a>
+    </li>
+    <li class="adm-li <%= activePage === 'orders' ? 'active' : '' %>">
+      <a class="adm-nav" href="/admin/dashboard/orders"><img class="dsh_icons" src="<%= activePage === 'orders' ? '/Media/Icons/Dashboard/orders_green.png' : '/Media/Icons/Dashboard/orders_white.png' %>" alt=""> Orders</a>
+    </li>
+    <li class="adm-li <%= activePage === 'complains' ? 'active' : '' %>">
+      <a class="adm-nav" href="/admin/dashboard/complains"><img class="dsh_icons" src="<%= activePage === 'complaints' ? '/Media/Icons/Dashboard/comp_green.png' : '/Media/Icons/Dashboard/comp_white.png' %>" alt=""> Complains</a>
+    </li>
+  </div>
+</ul>
+
+  </div>
+
+  <div class="main-content" >
+    <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+    
+        <a class="navbar-brand" href="/"></a>
+
+        <div class="d-flex">
+            <a class="btn" href="/"><img class="na_icon" src="/Media/Icons/notification.png" alt=""></a>
+            <a class="btn" href="/user/account"><img class="na_icon" src="/Media/Icons/profile.png" alt=""></a>
+        </div>
+    </div>
+    </nav>
+    
+    <div class="p-5">
+        <%- body %>
+    </div>
+  </div>
+</div> 
+
+<script src="/Java script/admin/admin.js"></script>
+
+</body>
+</html>
+
+

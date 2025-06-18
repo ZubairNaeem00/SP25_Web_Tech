@@ -1,0 +1,32 @@
+<h1 class="title ps-4 pt-2">Complaints</h1>
+
+<% if (complains.length === 0) { %>
+  <div class="alert alert-info">No complaints submitted yet.</div>
+<% } else { %>
+  <div class="complaints-list px-4">
+    <% complains.forEach(complaint => { %>
+      <div class="card mb-4 shadow-sm position-relative">
+        <div class="card-body">
+
+          <div class="mb-2 text-start">
+            <strong>User:</strong> <%= complaint.user.name %> <br>
+            <strong>Email:</strong> <%= complaint.user.email %>
+          </div>
+
+
+          <h5 class="card-title mt-2">
+            <%= complaint.orderId ? `Order Complaint - ${complaint.orderId}` : 'General Complaint' %>
+          </h5>
+          <p class="card-text"><%= complaint.message %></p>
+          <p class="card-text">
+            <small class="text-muted">Submitted on <%= complaint.createdAt.toLocaleString() %></small>
+          </p>
+
+          <div class="text-end">
+            <a href="/admin/reply/<%= complaint._id %>" class="btn btn-outline-primary btn-sm">Reply</a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+<% } %>

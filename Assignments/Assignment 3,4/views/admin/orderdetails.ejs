@@ -1,0 +1,39 @@
+<div class="order-details-container" style="display: flex; gap: 40px; padding: 40px;">
+  
+  <!-- Order Info -->
+  <div class="order-info" style="flex: 1; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <h2>Order Summary</h2>
+    <p><strong>Order ID:</strong> <%= order._id %></p>
+    <p><strong>Name:</strong> <%= order.userName %></p>
+    <p><strong>Email:</strong> <%= order.email %></p>
+    <p><strong>Phone:</strong> <%= order.phoneNumber %></p>
+    <p><strong>Address:</strong> <%= order.address %></p>
+    <p><strong>Total:</strong> PKR <%= order.totalPrice %></p>
+    <p><strong>Status:</strong> <%= order.status %></p>
+    <p><strong>Placed On:</strong> <%= order.createdAt.toDateString() %></p>
+
+    <h4>Products:</h4>
+    <ul>
+      <% order.products.forEach(p => { %>
+        <li><%= p.qty %> × <%= p.name %> — PKR <%= p.price %></li>
+      <% }) %>
+    </ul>
+  </div>
+
+  <!-- Status Update -->
+  <div class="status-update-form" style="flex: 0.7; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <h2>Update Status</h2>
+    <form action="/admin/orders/<%= order._id %>/status" method="POST">
+      <label for="status">Select New Status:</label>
+      <select id="status" name="status" style="display: block; margin: 10px 0; padding: 8px; width: 100%;">
+        <option value="pending" <%= order.status === 'pending' ? 'selected' : '' %>>Pending</option>
+        <option value="processing" <%= order.status === 'processing' ? 'selected' : '' %>>Processing</option>
+        <option value="shipped" <%= order.status === 'shipped' ? 'selected' : '' %>>Shipped</option>
+        <option value="delivered" <%= order.status === 'delivered' ? 'selected' : '' %>>Delivered</option>
+        <option value="cancelled" <%= order.status === 'cancelled' ? 'selected' : '' %>>Cancelled</option>
+      </select>
+      <button type="submit" style="background-color: #28a745; color: white; padding: 10px 16px; border: none; border-radius: 5px;">Update Status</button>
+    </form>
+  </div>
+
+</div>

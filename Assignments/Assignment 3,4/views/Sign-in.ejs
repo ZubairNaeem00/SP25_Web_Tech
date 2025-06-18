@@ -1,0 +1,41 @@
+    <form action="">
+        <div class="justify-content-center row reg pt-5 pb-5">
+            <div class="register_card col-8">
+                <h1>Create Account</h1>
+                <div>
+                    <input type="text" id="username" class="inp_username inp" placeholder="Username" required>
+                    <span id="name-error" class="invalid-message"></span>
+                </div>
+                <div>
+                    <input type="text" id="email" class="inp_email inp" placeholder="Email" required>
+                    <span id="email-error" class="invalid-message"></span>
+                </div>
+                <div>
+                    <input type="text" id="phone" class="inp_phone inp" placeholder="Phone Number" minlength="10" maxlength="15" pattern="^\d+$" >
+                    <span id="phone-error" class="invalid-message"></span>
+                </div>
+                <div>
+                    <input type="text" id="address" class="inp_address inp" placeholder="Address" required>
+                    <span id="address-error" class="invalid-message"></span>
+                </div>
+                <div>
+                    <input type="text" id="credit_num" class="credit_num inp" placeholder="Credit Card Number" pattern="^\d{16}$" >
+                    <span id="credit-error" class="invalid-message"></span>
+                </div>
+                <div>
+                    <input type="month" id="expiry_date" class="expiry_date inp" placeholder="Expiration date" >
+                    <span id="expiry-error" class="invalid-message"></span>
+                </div>
+                <div>
+                    <input type="password" id="cvv_code" class="cvv_code inp" placeholder="CVV" pattern="^\d{3}$" >
+                    <span id="cvv-error" class="invalid-message"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Create" id="submit_btn" class="submit_btn">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="../Java script/sign-in.js"></script>
+    

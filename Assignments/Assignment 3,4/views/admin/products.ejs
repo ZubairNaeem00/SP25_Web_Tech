@@ -1,0 +1,58 @@
+<style>
+  .Tusers-card{
+    position: absolute;
+    right: 70px;
+    top: 77px;
+  }
+</style>
+
+<h1 class="title ps-4 pt-2"> Products </h1>
+<div class="Tusers-card ps-4">
+    
+    <div>
+    <h3><%= totalProducts %></h3>
+    <h5>Total Products</h5>
+    </div>
+    <img class="user_icon" src="/Media/Icons/Dashboard/product.webp" alt="">
+
+  </div>
+<a class="add-new" href="/admin/dashboard/create-product"> + Add new product</a>
+
+<!-- Header Row -->
+<div class="ribbon-row ribbon-header pt-4">
+  <div>SKU</div>
+  <div>Product</div>
+  <div>Category</div>
+  <div>Price (PKR)</div>
+  <div>Status</div>
+  <div>Edit</div>
+</div>
+
+<!-- Product Rows -->
+<% products.forEach(product => { %>
+  <div class="ribbon-row">
+    <div><%= product.sku %></div>
+
+    <div class="product-info">
+      <img src="/Media/Images/Products/<%= product.product_image %>" alt="<%= product.name %>">
+      <span class="pe-2"><%= product.name %></span>
+    </div>
+
+    <div><%= product.category.name || product.category %></div>
+    <div><%= product.price %></div>
+    <div><%= product.product_status %></div>
+    
+    <div>
+      <a href="/admin/dashboard/product/edit/<%= product._id %>">
+        <img class="edit_icon" src="/Media/Icons/edit.png" alt="Edit">
+      </a>
+      <a class="ps-2" href="/admin/dashboard/product/delete/<%= product._id %>" 
+        onclick="return confirm('Are you sure you want to delete this product?');" >
+        <i class="fas fa-trash-alt" style="color: red;"></i>
+      </a>
+    </div>
+  </div>
+<% }) %>
+
+
+</div>

@@ -1,0 +1,63 @@
+  <h1 class="title p-4">Welcome, Admin!</h1>
+  <div class="Tusers-card ms-4 me-4" >
+    
+    <div>
+    <h3><%= totalUsers %></h3>
+    <h5>Registered Users</h5>
+    </div>
+    <img class="user_icon" src="/Media/Icons/users.png" alt="">
+
+  </div>
+
+    <div class="Tusers-card ms-4 me-4 ">
+    
+    <div>
+    <h3><%= recentUsers %></h3>
+    <h5>Recent Users</h5>
+    </div>
+    <img class="user_icon" src="/Media/Icons/users.png" alt="">
+
+  </div>
+
+<div class="Tusers-card ms-4 me-4">
+    
+    <div>
+    <h3><%= totalProducts %></h3>
+    <h5>Total Products</h5>
+    </div>
+    <img class="user_icon" src="/Media/Icons/Dashboard/product.webp" alt="">
+
+  </div>
+
+<div class="m-5">
+
+  <h5>Registered users in last 14 days</h5>
+ <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const xValues = <%- JSON.stringify(labels) %>;
+  const yValues = <%- JSON.stringify(data) %>;
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,255,60,1.0)",
+      borderColor: "rgba(0,255,0,0.6)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+</script>
+</div>

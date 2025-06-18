@@ -1,0 +1,42 @@
+<div class="account-container">
+  <div class="sidebar">
+    <ul>
+      <li><a href="/user/account">My Orders</a></li>
+      <li><a href="/user/logout">Logout</a></li>
+    </ul>
+  </div>
+
+ <div class="content">
+  <h2>My Orders</h2>
+
+  <% if (!orders || orders.length === 0) { %>
+    <p>You haven't placed any orders yet.</p>
+  <% } else { %>
+    <% orders.forEach(order => { %>
+      <div class="order-card" style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+        <h4>Order ID: <%= order._id.toString().slice(-6).toUpperCase() %></h4>
+
+        <p><strong>Total Price:</strong> PKR <%= order.totalPrice %></p>
+        <span class="badge bbb2 <%= order.status === 'pending' ? 'bg-warning' : order.status === 'processing' ? 'bg-info' : order.status === 'shipped' ? 'bg-primary' : order.status === 'delivered' ? 'bg-success' : order.status === 'cancelled' ? 'bg-danger' : 'bg-secondary' %>"><%= order.status.charAt(0).toUpperCase() + order.status.slice(1) %></span>
+        <p><strong>Placed On:</strong> <%= order.createdAt ? order.createdAt.toDateString() : 'N/A' %></p>
+        
+        <p><strong>Name:</strong> <%= order.userName %></p>
+        <p><strong>Email:</strong> <%= order.email %></p>
+        <p><strong>Phone:</strong> <%= order.phoneNumber %></p>
+        <p><strong>Address:</strong> <%= order.address %></p>
+
+        <% if (order.products && order.products.length > 0) { %>
+          <ul style="list-style: disc; padding-left: 20px;">
+            <% order.products.forEach(p => { %>
+              <li>
+                <%= p.qty %> × <%= p.name %> — PKR <%= p.price %>
+              </li>
+            <% }) %>
+          </ul>
+        <% } %>
+      </div>
+    <% }) %>
+  <% } %>
+</div>
+
+</div>
