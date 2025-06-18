@@ -1,0 +1,43 @@
+.reg{
+    display: flex;
+    justify-content: center;
+    
+}
+.register_card{
+    width: 600px;
+    text-align: center;
+    justify-content: center;
+}
+
+.inp{
+    width: 450px;
+    height: 45px;
+    align-self: center;
+    border: solid;
+    border-width: 1px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    
+}
+
+.submit_btn{
+    width: 150px;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.submit_btn:hover{
+    width: 151px;
+    height: 51px;
+}
+
+.invalid-message{
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+    color: red;
+}
