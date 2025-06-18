@@ -1,0 +1,110 @@
+<style>
+  .form-heading {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .complaint-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<h2>Submit a Complaint</h2>
+
+<form method="POST" action="">
+  <div>
+    <label>Name:</label><br>
+    <input type="text" name="name" value="" >
+  </div>
+
+  <div>
+    <label>Complaint Type:</label><br>
+    <select name="type" id="complaintType" required>
+      <option value="">-- Select --</option>
+      <option value="order">Order Complaint</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div id="orderSelect" style="display: none; margin-top: 10px;">
+    <label>Select Order ID:</label><br>
+    <select name="orderId">
+      <% orders.forEach(order => { %>
+        <option value="<%= order._id %>"><%= order._id.toString().slice(-6).toUpperCase() %></option>
+      <% }) %>
+    </select>
+  </div>
+
+  <div id="messageBox" style="display: none; margin-top: 10px;">
+    <label>Message:</label><br>
+    <textarea name="message" rows="5" cols="40" required></textarea>
+  </div>
+
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  const typeSelect = document.getElementById('complaintType');
+  const orderSelect = document.getElementById('orderSelect');
+  const messageBox = document.getElementById('messageBox');
+
+  typeSelect.addEventListener('change', () => {
+    if (typeSelect.value === 'order') {
+      orderSelect.style.display = 'block';
+      messageBox.style.display = 'block';
+    } else if (typeSelect.value === 'other') {
+      orderSelect.style.display = 'none';
+      messageBox.style.display = 'block';
+    } else {
+      orderSelect.style.display = 'none';
+      messageBox.style.display = 'none';
+    }
+  });
+</script>

@@ -1,0 +1,27 @@
+
+
+<div class="container mt-5">
+  <h2 class="mb-4">My Complaints</h2>
+
+  <% if (complains.length === 0) { %>
+    <div class="alert alert-info">You have not submitted any complaints yet.</div>
+  <% } else { %>
+    <div class="complaints-list">
+      <% complains.forEach(complaint => { %>
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= complaint.orderId ? `Order Complaint - ${complaint.orderId}` : 'General Complaint' %>
+            </h5>
+            <p class="card-text"><%= complaint.message %></p>
+            <p class="card-text">
+              <small class="text-muted">Submitted on <%= complaint.createdAt.toLocaleString() %></small>
+            </p>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
+</div>
+
+

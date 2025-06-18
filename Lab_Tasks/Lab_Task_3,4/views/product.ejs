@@ -1,0 +1,21 @@
+<!-- Product Detail -->
+<div class="p_dtl p-5">
+  <div class="left">
+    <img class="p_imagee" src="../Media/Images/Products/<%= product.product_image %>" alt="">
+  </div>
+
+  <div class="right p-5">
+    <h1><%= product.name %></h1>
+    <strong class="price">Price: Rs.<%= product.price %></strong>
+    <p><%= product.description %></p>
+    <button class="add-to-cart-btn"
+      data-id="<%= product._id %>"
+      data-name="<%= product.name %>"
+      data-price="<%= product.price %>"
+      data-image="<%= product.product_image %>">
+      Add to Cart
+    </button>
+  </div>
+</div>
+
+

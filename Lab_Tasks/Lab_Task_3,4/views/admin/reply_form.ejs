@@ -1,0 +1,12 @@
+<h2>Reply to Complaint</h2>
+
+<p><strong>From:</strong> <%= complaint.user.name %> (<%= complaint.user.email %>)</p>
+<p><strong>Complaint:</strong> <%= complaint.message %></p>
+
+<form action="/reply/<%= complaint._id %>" method="POST">
+  <div class="mb-3">
+    <label for="replyMessage" class="form-label">Your Reply</label>
+    <textarea class="form-control" id="replyMessage" name="replyMessage" rows="4" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send Reply</button>
+</form>

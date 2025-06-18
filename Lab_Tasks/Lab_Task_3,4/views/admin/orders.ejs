@@ -1,0 +1,55 @@
+
+
+<h1 class="title ps-4 pt-2"> Orders </h1>
+<div class="Tusers-card ps-4 ms-4">
+    
+    <div>
+    <h3><%= totalOrders %></h3>
+    <h5>Total Orders</h5>
+    </div>
+    <img class="user_icon" src="/Media/Icons/Dashboard/orders.webp" alt="">
+
+  </div>
+<div class="ribbon-row ribbon-row_o ribbon-header">
+  <div>Order ID</div>
+  <div>Customer</div>
+  <div>Items</div>
+  <div>Total (PKR)</div>
+  <div>Address</div> <!-- Changed from Phone -->
+  <div>Status</div>
+</div>
+
+<% orders.forEach(order => { %>
+  <div class="ribbon-row ribbon-row_o">
+    <div><%= order._id.toString().slice(-6).toUpperCase() %></div>
+
+    <div class="product-info">
+      <span class="ps-2">
+        <strong><%= order.userName %></strong><br>
+        <small><%= order.email %></small>
+      </span>
+    </div>
+
+    <div>
+      <ul class="ps-2">
+        <% order.products.forEach(p => { %>
+          <li><%= p.qty %> × <%= p.name %></li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <div><%= order.totalPrice %></div>
+
+    <div><%= order.address %></div> <!-- Changed from phoneNumber -->
+
+    <div>
+      <span class="badge <%= order.status === 'pending' ? 'bg-warning' : order.status === 'processing' ? 'bg-info' : order.status === 'shipped' ? 'bg-primary' : order.status === 'delivered' ? 'bg-success' : order.status === 'cancelled' ? 'bg-danger' : 'bg-secondary' %>"><%= order.status.charAt(0).toUpperCase() + order.status.slice(1) %></span>
+    </div>
+
+    <div>
+      <a class="upd" href="/admin/dashboard/order/status/<%= order._id %>">
+        UPDATE STATUS
+      </a>
+    </div>
+  </div>
+<% }) %>

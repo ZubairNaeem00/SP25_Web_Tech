@@ -1,0 +1,61 @@
+  <div class="hero row justify-content-center m-3">
+    <div class="herocontent col-8 ">
+      <h1 class="hero-heading">Latest Arrivals</h1>
+      <button class="hero-btn">Shop Now</button>
+    </div>
+  </div>
+  
+<div id="productcorasuel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <% for(let i = 0; i < products.length; i += 4) { %>
+      <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+        <div class="products">
+          <% products.slice(i, i + 4).forEach(product => { %>
+            <div class="product_card">
+              <a class="product_link" href="/product/<%= product._id %>">
+              <img class="product_image" src="../Media/Images/Products/<%= product.product_image %>" alt="">
+              <p class="product_title"><%= product.name %></p>
+              </a>
+              <p class="product_price">
+                Rs.<%= product.price %>
+              </p>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    <% } %>
+
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#productcorasuel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#productcorasuel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+
+
+  <div class="hero2 row justify-content-center m-3">
+    <div class="herocontent col-8 ">
+      <h1 class="hero-heading">Hockley Jean</h1>
+      <button class="hero-btn">Shop Now</button>
+    </div>
+  </div>
+
+  <div class="products">
+  <% tshirtProducts.forEach(product => { %>
+    <div class="product_card">
+      <a class="product_link" href="/product/<%= product._id %>">
+        <img class="product_image" src="../Media/Images/Products/<%= product.product_image %>" alt="">
+        <p class="product_title"><%= product.name %></p>
+      </a>
+      <p class="product_price">
+        Rs.<%= product.price %>
+      </p>
+    </div>
+  <% }) %>
+</div>
+
+
